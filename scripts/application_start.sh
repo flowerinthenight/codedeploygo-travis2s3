@@ -8,8 +8,6 @@
 # godep restore
 
 # run server
-# ./codedeploy-golang > /dev/null 2> /dev/null < /dev/null &
 cd /home/ubuntu/codedeploygo-travis2s3/
-echo "run here"
-ls -laF
+./codedeploy-golang > /dev/null 2> /dev/null < /dev/null &
 exit 0
