@@ -2,12 +2,12 @@ package main
 
 import (
 	"fmt"
-	"time"
 	"net/http"
+	"time"
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello, world! "+time.Now().String())
+	fmt.Fprintf(w, "Version 1: "+time.Now().String())
 }
 
 func main() {
