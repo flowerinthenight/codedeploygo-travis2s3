@@ -1,0 +1,11 @@
+os:
+  - linux
+
+language: go
+
+go:
+  - master
+
+script:
+  - go test -v $(go list ./... | grep -v /vendor/) -cover
+  - go build -v
