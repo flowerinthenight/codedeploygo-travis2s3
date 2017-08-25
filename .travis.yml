@@ -6,10 +6,10 @@ go:
 script:
 - go test -v $(go list ./... | grep -v /vendor/) -cover
 - go build -v
-after_success:
-- export FILE_TO_UPLOAD=app.tar.gz
-- tar cvzf ${FILE_TO_UPLOAD} codedeploygo-travis2s3 appspec.yml scripts/
-- ls -laF
+  # after_success:
+  # - export FILE_TO_UPLOAD=app.tar.gz
+  # - tar cvzf ${FILE_TO_UPLOAD} codedeploygo-travis2s3 appspec.yml scripts/
+  # - ls -laF
 deploy:
 - provider: s3
   access_key_id: AKIAINLJDAMNCZZ5NRDA
@@ -31,6 +31,10 @@ deploy:
   application: codedeploygo-travis2s3
   deployment_group: codedeploygo-travis2s3-dg
   on: *2
-  # before_deploy:
-  # - mkdir -p dpl_cd_upload
-  # - mv app.tar.gz dpl_cd_upload/app.tar.gz
+before_deploy:
+  - tar cvzf app.tar.gz codedeploygo-travis2s3 appspec.yml scripts/
+  - ls -laF
+  - mkdir -p dpl_cd_upload
+  - cp app.tar.gz dpl_cd_upload/
+  - ls -laF
+  - ls -laF dpl_cd_upload/
