@@ -31,6 +31,6 @@ deploy:
   application: codedeploygo-travis2s3
   deployment_group: codedeploygo-travis2s3-dg
   on: *2
-before_deploy:
-- mkdir -p dpl_cd_upload
-- mv app.tar.gz dpl_cd_upload/app.tar.gz
+  # before_deploy:
+  # - mkdir -p dpl_cd_upload
+  # - mv app.tar.gz dpl_cd_upload/app.tar.gz
