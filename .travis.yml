@@ -8,5 +8,5 @@ script:
   - go build -v
 after_success:
   - export FILE_TO_UPLOAD=app.tar.gz
-  - tar cvzf ${FILE_TO_UPLOAD} codedeploygo-travis2s3
+  - tar cvzf ${FILE_TO_UPLOAD} codedeploygo-travis2s3 appspec.yml scripts/
   - ls -laF

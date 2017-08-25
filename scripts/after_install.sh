@@ -27,3 +27,4 @@
 cd /home/ubuntu/codedeploygo-travis2s3/
 ls -laF
 tar xvzf app.tar.gz
+ls -laF
