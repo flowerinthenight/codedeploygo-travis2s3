@@ -30,6 +30,7 @@ deploy:
   bundle_type: tgz
   application: codeploygo-travis2s3
   deployment_group: codeploygo-travis2s3-dg
+  region: ap-northeast-1
   on: *2
 before_deploy:
   - tar cvzf app.tar.gz codedeploygo-travis2s3 appspec.yml scripts/
