@@ -15,6 +15,7 @@ deploy:
   skip_cleanup: true
   on: &2
     repo: flowerinthenight/codedeploygo-travis2s3
+    branch: master
   bucket: codedeploygo-travis2s3
   upload_dir: latest
   region: ap-northeast-1
@@ -30,8 +31,5 @@ deploy:
   on: *2
 before_deploy:
   - tar cvzf app.tar.gz codedeploygo-travis2s3 appspec.yml scripts/
-  - ls -laF
   - mkdir -p dpl_cd_upload
   - cp app.tar.gz dpl_cd_upload/
-  - ls -laF
-  - ls -laF dpl_cd_upload/
